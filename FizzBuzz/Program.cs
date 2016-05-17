@@ -6,21 +6,17 @@ namespace FizzBuzz
     {
         public static void Main(string[] args)
         {
-            0.to(100, do_:(i => {
-                (i % 3 == 0)
-                    .ifTrue(() => 
-                        System.Console.WriteLine("Fizz")
+            0.to(100).@do(i => {
+                (i % 3 == 0) .ifTrue(() =>
+                    "Fizz".printNl()
+                ) .ifFalse(() =>
+                    (i % 5 == 0) .ifTrue(() =>
+                        "Buzz".printNl()
+                    ) .ifFalse(() =>
+                        i.printNl()
                     )
-                    .ifFalse(() => 
-                        (i % 5 == 0)
-                            .ifTrue(() => 
-                                System.Console.WriteLine("Buzz")
-                            )
-                            .ifFalse(() => 
-                                System.Console.WriteLine(i)
-                            )
-                    );
-            }));
+                );
+            });
         }
     }
 }
