@@ -16,11 +16,6 @@ namespace FizzBuzz
             = conversionObj.AsQueryable()
                 .ToDictionary(k => k.Value, v => v.Key);
 
-        public static Bool wrap(bool value)
-        {
-            return conversionObj[value];
-        }
-
         public static implicit operator bool(Bool value) {
             return conversionPrimitive[value];
         }
