@@ -4,17 +4,17 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        0.to(100).@do(i =>
-                (i % 15 == 0).ifTrue(() =>
+        1.to(100).@do(n =>
+            (n % 15 == 0).ifTrue(() =>
                 "FizzBuzz".printNl()
             ).ifFalse(() =>
-                    (i % 3 == 0).ifTrue(() =>
-                            "Fizz".printNl()
+                (n % 5 == 0).ifTrue(() =>
+                    "Buzz".printNl()
                 ).ifFalse(() =>
-                        (i % 5 == 0).ifTrue(() =>
-                            "Buzz".printNl()
+                    (n % 3 == 0).ifTrue(() =>
+                        "Fizz".printNl()
                     ).ifFalse(() =>
-                            i.printNl()
+                        n.printNl()
                     )
                 )
             )
